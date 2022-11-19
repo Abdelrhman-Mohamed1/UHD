@@ -1,0 +1,19 @@
+#!/bin/zsh
+#By hunter
+#check online machines in Network
+figlet 'UHD'
+echo '-Up Hosts Discovering. \n-version:v1  \nEnter GatewayIp'
+read ip
+var1=$(echo $ip|cut -d '.' -f 1,2,3)  
+var2=$(echo $ip|cut -d '.' -f 4)
+
+if [[ $(ping -c 2 $ip|grep -o '64'|uniq) == 64 ]];then       #check if network reached or not
+echo '>Network reached \n>>Discovering UP machines...\U1F985'
+for i in $(seq $var2 254);do                                 #check online ip's from gatewatip to 254
+ping -c 2 -i 0.1 -W 0.5  $var1.$i |grep "64 bytes" |cut -d ':' -f 1|cut -d ' ' -f 4|uniq ;done
+echo "Done"
+else
+echo '>Network unreachable \nDone'
+fi
+
+
