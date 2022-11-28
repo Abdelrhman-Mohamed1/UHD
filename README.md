@@ -18,12 +18,17 @@ How to use :
  \___/|_| |_|____/ 
                    
 -Up Hosts Discovering. 
+
 -version:v1  
+
 Enter GatewayIp
+
 192.168.1.1
+
 >Network reached 
+
 >>Discovering UP machines...🦅
-192.168.1.1
-192.168.1.4
+
+
 
 
